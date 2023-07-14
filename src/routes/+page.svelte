@@ -1,22 +1,33 @@
-<div>
+<script>
+	export let data;
+
+	import imageUrlBuilder from '@sanity/image-url';
+	import { default as client } from '$lib/sanity.ts';
+
+	console.log(data);
+	const builder = imageUrlBuilder(client);
+
+	function imageFor(imgSrc) {
+		console.log(imgSrc);
+		return builder.image(imgSrc);
+	}
+</script>
+
+<div class="p-20">
 	<div class="flex flex-row items-center">
 		<div
 			class="flex flex-col items-center gap-4 card p-8 card-hover w-1/2 m-5 variant-filled-surface"
 		>
 			<p>
-				Join us at The Dance Haus and experience the rhythm of life. Our state-of-the-art studio
-				offers a vibrant and inclusive environment where dancers of all ages and skill levels can
-				thrive.
+				{data.homepageData[0].textWithImage.text}
 			</p>
 
-			<p>
-				Immerse yourself in the art of movement with our talented instructors, who bring their
-				expertise and creativity to every class. From ballet to hip-hop, contemporary to jazz, we
-				have a wide range of dance styles to ignite your imagination.
-			</p>
 			<button type="button" class="btn bg-gradient-to-br variant-gradient-primary-secondary"
 				>See Our Class Schedule</button
 			>
 		</div>
+		{#if data.homepageData[0].textWithImage.image && data.homepageData[0].textWithImage.image.asset}
+			<img class="rounded" src={imageFor(data.homepageData[0].textWithImage.image)} alt="" />
+		{/if}
 	</div>
 </div>
