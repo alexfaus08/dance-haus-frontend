@@ -15,13 +15,15 @@
 		<AppBar>
 			<svelte:fragment slot="lead">
 				<a href="/">
-					<strong class="text-lg md:text-xl uppercase">The Dance Haus</strong>
+					<strong class="lg:pl-32 text-lg md:text-xl uppercase">The Dance Haus</strong>
 				</a>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-				<a class="btn btn-sm md:btn-lg bg-initial" href="/events"> Events </a>
-				<a class="btn btn-sm md:btn-lg bg-initial" href="/events"> Classes </a>
-				<a class="btn btn-sm md:btn-lg bg-initial" href="/events"> Contact Us </a>
+				<div class="lg:pr-32 flex flex-row items-center gap-4">
+					<a class="btn btn-sm md:btn-lg bg-initial" href="#events"> Events </a>
+					<a class="btn btn-sm md:btn-lg bg-initial" href="#classSchedule"> Classes </a>
+					<a class="btn btn-sm md:btn-lg bg-initial" href="#contactUs"> Contact Us </a>
+				</div>
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
