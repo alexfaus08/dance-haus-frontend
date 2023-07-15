@@ -11,19 +11,25 @@
 	function imageFor(imgSrc) {
 		return builder.image(imgSrc);
 	}
-
-	console.log(textWithImage);
 </script>
 
-<div class="flex flex-col lg:flex-row items-center">
+<div class="flex flex-col lg:flex-row items-center p-4">
 	{#if textWithImage.image && textWithImage.image.asset && imageOnLeft}
-		<img class="hidden lg:flex rounded w-1/2" src={imageFor(textWithImage.image)} alt="" />
+		<img
+			class="hidden lg:flex rounded w-1/2"
+			src={imageFor(textWithImage.image)}
+			alt={textWithImage.alt}
+		/>
 	{/if}
 	<div
-		class="flex flex-col items-center gap-4 card lg:p-8 card-hover w-3/4 lg:w-1/2 lg:m-5 variant-filled-surface"
+		class="flex flex-col items-center gap-4 card lg:p-8 card-hover w-3/4 md:w-1/2 lg:m-5 variant-filled-surface"
 	>
 		<header>
-			<img class="lg:hidden rounded-t flex w-full" src={imageFor(textWithImage.image)} alt="" />
+			<img
+				class="lg:hidden rounded-t flex w-full"
+				src={imageFor(textWithImage.image)}
+				alt={textWithImage.alt}
+			/>
 		</header>
 
 		{#if textWithImage.text}
@@ -37,6 +43,10 @@
 		</button>
 	</div>
 	{#if textWithImage.image && textWithImage.image.asset && !imageOnLeft}
-		<img class="hidden lg:flex rounded w-1/2" src={imageFor(textWithImage.image)} alt="" />
+		<img
+			class="hidden lg:flex rounded w-1/2"
+			src={imageFor(textWithImage.image)}
+			alt={textWithImage.alt}
+		/>
 	{/if}
 </div>
