@@ -140,6 +140,70 @@
 					</div>
 				</svelte:fragment>
 			</AccordionItem>
+			<AccordionItem>
+				<svelte:fragment slot="lead">
+					<h3 class="text-2xl">Wednesdays</h3>
+				</svelte:fragment>
+				<!-- summary is required -->
+				<svelte:fragment slot="summary">
+					<div class="hidden" />
+				</svelte:fragment>
+				<svelte:fragment slot="content">
+					<div>
+						{#each danceClasses.get('Wednesday') as danceClass}
+							<DanceClassListItem {danceClass} />
+						{/each}
+					</div>
+				</svelte:fragment>
+			</AccordionItem>
+			<AccordionItem>
+				<svelte:fragment slot="lead">
+					<h3 class="text-2xl">Thursdays</h3>
+				</svelte:fragment>
+				<!-- summary is required -->
+				<svelte:fragment slot="summary">
+					<div class="hidden" />
+				</svelte:fragment>
+				<svelte:fragment slot="content">
+					<div>
+						{#each danceClasses.get('Thursday') as danceClass}
+							<DanceClassListItem {danceClass} />
+						{/each}
+					</div>
+				</svelte:fragment>
+			</AccordionItem>
+			<AccordionItem>
+				<svelte:fragment slot="lead">
+					<h3 class="text-2xl">Fridays</h3>
+				</svelte:fragment>
+				<!-- summary is required -->
+				<svelte:fragment slot="summary">
+					<div class="hidden" />
+				</svelte:fragment>
+				<svelte:fragment slot="content">
+					<div>
+						{#each danceClasses.get('Friday') as danceClass}
+							<DanceClassListItem {danceClass} />
+						{/each}
+					</div>
+				</svelte:fragment>
+			</AccordionItem>
+			<AccordionItem>
+				<svelte:fragment slot="lead">
+					<h3 class="text-2xl">Saturday</h3>
+				</svelte:fragment>
+				<!-- summary is required -->
+				<svelte:fragment slot="summary">
+					<div class="hidden" />
+				</svelte:fragment>
+				<svelte:fragment slot="content">
+					<div>
+						{#each danceClasses.get('Saturday') as danceClass}
+							<DanceClassListItem {danceClass} />
+						{/each}
+					</div>
+				</svelte:fragment>
+			</AccordionItem>
 		</Accordion>
 	</Section>
 	<Section bgColor="bg-surface-600" id="documents">
