@@ -16,11 +16,19 @@
 
 <div>
 	<Section>
+		<div class="flex flex-col gap-4 pb-10">
+			<h1
+				class="text-center text-7xl bg-gradient-to-br from-primary-600 to-primary-200 bg-clip-text text-transparent box-decoration-clone"
+			>
+				{homepageData.title}
+			</h1>
+			<h2 class="text-center text-3xl text-primary-200">{homepageData.tagline}</h2>
+		</div>
 		{#if textWithImage}
 			<TextWithImage {textWithImage} />
 		{/if}
 	</Section>
-	<Section bgColor="bg-surface-700" id="events">
+	<Section bgColor="bg-gradient-to-t from-secondary-500 to-surface-initial" id="events">
 		<div class="max-w-4xl mx-auto">
 			<h2 class="text-center text-4xl my-8 p-4 text-secondary-400">Upcoming Events</h2>
 			<div class="grid lg:grid-cols-2 gap-8">
@@ -28,7 +36,7 @@
 					<div class="card card-hover">
 						<a href={imageFor(event.flyer)} target="_blank">
 							<img
-								class="snap-center w-[1024px] rounded-container-token"
+								class="snap-center w-[1024px] h-full rounded-container-token"
 								src={imageFor(event.flyer)}
 								alt="event flyer"
 								loading="lazy"
@@ -37,6 +45,47 @@
 					</div>
 				{/each}
 			</div>
+		</div>
+	</Section>
+	<Section bgColor="bg-surface-700" id="contactUs">
+		<h2 class="text-center text-4xl text-tertiary-300 mb-2">Contact Us</h2>
+		<p class="text-center text-xl text-tertiary-500">
+			{homepageData.contactUsTagline}
+		</p>
+		<div class="lg:flex-row flex flex-col items-center justify-center gap-4 mt-6">
+			<a class="btn variant-filled-primary" href={`tel:${homepageData.phoneNumber}`}>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					fill="currentColor"
+					class="w-6 h-6 mr-1.5"
+				>
+					<path
+						fill-rule="evenodd"
+						d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"
+						clip-rule="evenodd"
+					/>
+				</svg>
+
+				{homepageData.phoneNumber}
+			</a>
+			<a class="btn variant-filled-secondary" href={`mailto:${homepageData.email}`}>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					fill="currentColor"
+					class="w-6 h-6 mr-1.5"
+				>
+					<path
+						d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"
+					/>
+					<path
+						d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"
+					/>
+				</svg>
+
+				{homepageData.email}
+			</a>
 		</div>
 	</Section>
 	<Section bgColor="bg-gradient-to-br variant-gradient-primary-secondary" id="classSchedule">

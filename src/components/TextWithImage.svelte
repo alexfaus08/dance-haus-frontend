@@ -3,7 +3,6 @@
 	export let imageOnLeft = false;
 
 	import { default as imageFor } from '$lib/imageFor.ts';
-	import { PortableText } from '@portabletext/svelte';
 </script>
 
 <div class="flex flex-col lg:flex-row items-center">
@@ -26,8 +25,8 @@
 		</header>
 
 		{#if textWithImage.text}
-			<p class="p-4 lg:p-8">
-				<PortableText value={textWithImage.text} />
+			<p class="p-4 lg:p-8 whitespace-pre-line">
+				{textWithImage.text}
 			</p>
 		{/if}
 
