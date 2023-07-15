@@ -1,7 +1,11 @@
 import client from '$lib/sanity';
 
 export async function load() {
-	const pageDataQuery = `*[_type == "homepage"][0]`;
+	const pageDataQuery = `*[_type == "homepage"][0] {
+		...,
+		"registrationDocumentUrl": registrationDocument.asset->url,
+		"studioRegulationsDocumentUrl": studioRegulationsDocument.asset->url
+	}`;
 	const eventsQuery = `*[_type == "danceEvent"]`;
 	const classesQuery = `*[_type == 'danceClass'] | order(startTime, asc)`;
 
