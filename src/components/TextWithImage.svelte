@@ -31,9 +31,12 @@
 			</p>
 		{/if}
 
-		<button type="button" class="mb-8 btn bg-gradient-to-br variant-gradient-primary-secondary">
+		<a
+			href={textWithImage.buttonLink}
+			class="mb-8 btn bg-gradient-to-br variant-gradient-primary-secondary"
+		>
 			{textWithImage.buttonText}
-		</button>
+		</a>
 	</div>
 	{#if textWithImage.image && textWithImage.image.asset && !imageOnLeft}
 		<img
