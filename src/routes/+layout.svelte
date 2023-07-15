@@ -19,9 +19,9 @@
 				</a>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-				<a class="btn btn-sm bg-initial" href="/events"> Events </a>
-				<a class="btn btn-sm bg-initial" href="/events"> Classes </a>
-				<a class="btn btn-sm bg-initial" href="/events"> Contact Us </a>
+				<a class="btn btn-lg bg-initial" href="/events"> Events </a>
+				<a class="btn btn-lg bg-initial" href="/events"> Classes </a>
+				<a class="btn btn-lg bg-initial" href="/events"> Contact Us </a>
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
