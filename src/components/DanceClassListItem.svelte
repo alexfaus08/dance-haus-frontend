@@ -2,7 +2,7 @@
 	export let danceClass;
 </script>
 
-<div class="p-4 flex flex-row justify-between">
+<div class="p-2 md:p-4 flex flex-row items-center justify-between">
 	<div>
 		<h3 class="text-secondary-300 text-xl">
 			{danceClass.name}
