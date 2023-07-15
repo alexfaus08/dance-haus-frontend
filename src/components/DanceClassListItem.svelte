@@ -9,14 +9,16 @@
 				{danceClass.name}
 			</span>
 			{#if danceClass.ageGroup}
-				<span class="text-sm lg:text-lg text-primary-300">
+				<span class="text-sm lg:text-lg text-primary-300 lg:ml-1">
 					(Ages {danceClass.ageGroup})
 				</span>
 			{/if}
 		</h3>
-		<h4 class="text-secondary-400">
-			Taught by {danceClass.instructor}
-		</h4>
+		{#if danceClass.instructor}
+			<h4 class="text-secondary-400">
+				Taught by {danceClass.instructor}
+			</h4>
+		{/if}
 		<span>
 			{danceClass.startTime} - {danceClass.endTime}
 		</span>
