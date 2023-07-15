@@ -1,13 +1,18 @@
 import client from '$lib/sanity';
 
 export async function load() {
-	const query = `*[_type == "homepage"]`;
+	const pageDataQuery = `*[_type == "homepage"]`;
+	const eventsQuery = `*[_type == "danceEvent"]`;
 
-	const data = await client.fetch(query);
+	const pageData = await client.fetch(pageDataQuery);
+	const eventsData = await client.fetch(eventsQuery);
 
-	if (data) {
+	if (pageData) {
 		return {
-			homepageData: data
+			homepageData: {
+				pageData: pageData,
+				eventsData: eventsData
+			}
 		};
 	}
 	return {
