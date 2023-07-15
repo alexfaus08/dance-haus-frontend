@@ -2,18 +2,11 @@
 	export let textWithImage;
 	export let imageOnLeft = false;
 
+	import { default as imageFor } from '$lib/imageFor.ts';
 	import { PortableText } from '@portabletext/svelte';
-	import { default as client } from '$lib/sanity.ts';
-	import imageUrlBuilder from '@sanity/image-url';
-
-	const builder = imageUrlBuilder(client);
-
-	function imageFor(imgSrc) {
-		return builder.image(imgSrc);
-	}
 </script>
 
-<div class="flex flex-col lg:flex-row items-center p-4">
+<div class="flex flex-col lg:flex-row items-center">
 	{#if textWithImage.image && textWithImage.image.asset && imageOnLeft}
 		<img
 			class="hidden lg:flex rounded w-1/2"
@@ -22,11 +15,11 @@
 		/>
 	{/if}
 	<div
-		class="flex flex-col items-center gap-4 card lg:p-8 card-hover w-3/4 md:w-1/2 lg:m-5 variant-filled-surface"
+		class="flex flex-col items-center gap-4 card lg:p-8 card-hover w-5/6 md:w-1/2 lg:m-5 variant-filled-surface"
 	>
 		<header>
 			<img
-				class="lg:hidden rounded-t flex w-full"
+				class="lg:hidden card flex w-full"
 				src={imageFor(textWithImage.image)}
 				alt={textWithImage.alt}
 			/>
@@ -44,7 +37,7 @@
 	</div>
 	{#if textWithImage.image && textWithImage.image.asset && !imageOnLeft}
 		<img
-			class="hidden lg:flex rounded w-1/2"
+			class="hidden lg:flex card w-1/2"
 			src={imageFor(textWithImage.image)}
 			alt={textWithImage.alt}
 		/>
