@@ -3,11 +3,14 @@
 
 	export let data;
 
-	const textWithImage = data.homepageData.pageData[0].textWithImage;
+	const textWithImage = data.homepageData.pageData.textWithImage;
 	const events = data.homepageData.eventsData;
+	const danceClasses = data.homepageData.classesData;
 
 	import TextWithImage from '../components/TextWithImage.svelte';
 	import { default as imageFor } from '$lib/imageFor.ts';
+	import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
+	import DanceClassListItem from '../components/DanceClassListItem.svelte';
 </script>
 
 <div>
@@ -34,5 +37,42 @@
 				{/each}
 			</div>
 		</div>
+	</Section>
+	<Section bgColor="bg-gradient-to-br variant-gradient-primary-secondary" id="classSchedule">
+		<h2 class="text-center text-4xl">Class Schedule</h2>
+		<Accordion class="card p-4 mt-6">
+			<AccordionItem open>
+				<svelte:fragment slot="lead">
+					<h3 class="text-2xl">Mondays</h3>
+				</svelte:fragment>
+				<!-- summary is required -->
+				<svelte:fragment slot="summary">
+					<div class="hidden" />
+				</svelte:fragment>
+				<svelte:fragment slot="content">
+					<div>
+						{#each danceClasses.get('Monday') as danceClass}
+							<DanceClassListItem {danceClass} />
+						{/each}
+					</div>
+				</svelte:fragment>
+			</AccordionItem>
+			<AccordionItem>
+				<svelte:fragment slot="lead">
+					<h3 class="text-2xl">Tuesdays</h3>
+				</svelte:fragment>
+				<!-- summary is required -->
+				<svelte:fragment slot="summary">
+					<div class="hidden" />
+				</svelte:fragment>
+				<svelte:fragment slot="content">
+					<div>
+						{#each danceClasses.get('Tuesday') as danceClass}
+							<DanceClassListItem {danceClass} />
+						{/each}
+					</div>
+				</svelte:fragment>
+			</AccordionItem>
+		</Accordion>
 	</Section>
 </div>
