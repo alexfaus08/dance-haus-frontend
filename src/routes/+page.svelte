@@ -178,7 +178,28 @@
 			</a>
 		</div>
 	</Section>
-	<footer>
-		<div class="max-w-7xl mx-auto p-8 lg:p-14">The Dance Haus</div>
+	<footer id="footer">
+		<div class="flex flex-row items-center justify-between p-8 lg:w-2/3 mx-auto">
+			<div class="flex flex-col gap-2">
+				<span class="text-2xl text-primary-300">
+					{homepageData.title}
+				</span>
+				<a class="text-secondary-400 underline" href={`tel:${homepageData.phoneNumber}`}>
+					{homepageData.phoneNumber}
+				</a>
+				<a class="text-secondary-400 underline" href={`mailto:${homepageData.email}`}>
+					{homepageData.email}
+				</a>
+				<span>
+					{homepageData.address}
+				</span>
+			</div>
+			<div class="text-tertiary-700 flex flex-col items-center text-sm">
+				<span> 2023 </span>
+				<span>
+					Website by <a class="underline" href="mailto:alexfaus08@gmail.com"> Alexander Faus </a>
+				</span>
+			</div>
+		</div>
 	</footer>
 </div>
