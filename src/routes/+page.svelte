@@ -15,7 +15,7 @@
 </script>
 
 <div>
-	<Section>
+	<Section id="top">
 		<div class="flex flex-col gap-4 pb-10">
 			<h1
 				class="text-center text-7xl bg-gradient-to-br from-primary-600 to-primary-200 bg-clip-text text-transparent box-decoration-clone"
