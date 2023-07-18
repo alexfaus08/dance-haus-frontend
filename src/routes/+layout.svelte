@@ -15,7 +15,10 @@
 		<AppBar>
 			<svelte:fragment slot="lead">
 				<a href="#top">
-					<strong class="lg:pl-32 text-lg md:text-xl uppercase">The Dance Haus</strong>
+					<strong
+						class="lg:pl-32 text-lg md:text-xl uppercase bg-gradient-to-br from-primary-700 to-primary-400 bg-clip-text text-transparent box-decoration-clone"
+						>The Dance Haus</strong
+					>
 				</a>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
