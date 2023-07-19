@@ -18,7 +18,7 @@
 	<Section id="top">
 		<div class="flex flex-col gap-4 pb-10">
 			<h1
-				class="text-center text-7xl bg-gradient-to-br from-primary-700 to-primary-400 bg-clip-text text-transparent box-decoration-clone"
+				class="text-center text-7xl bg-gradient-to-br from-primary-700 to-primary-600 bg-clip-text text-transparent box-decoration-clone"
 			>
 				{homepageData.title}
 			</h1>
