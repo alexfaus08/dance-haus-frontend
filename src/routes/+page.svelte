@@ -4,6 +4,8 @@
 	export let data;
 
 	const homepageData = data.homepageData.pageData;
+	console.log(homepageData);
+	const metaData = homepageData.metaInformation;
 	const textWithImage = data.homepageData.pageData.textWithImage;
 	const events = data.homepageData.eventsData;
 	const danceClasses = data.homepageData.classesData;
@@ -14,6 +16,13 @@
 	import DanceClassListItem from '../components/DanceClassListItem.svelte';
 </script>
 
+<svelte:head>
+	<title>
+		{metaData.title}
+	</title>
+	<meta name="description" content={metaData.description} />
+	<meta name="keywords" content={metaData.keywords.join(', ')} />
+</svelte:head>
 <div>
 	<Section id="top">
 		<div class="flex flex-col gap-4 pb-10">
