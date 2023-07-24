@@ -4,7 +4,6 @@
 	export let data;
 
 	const homepageData = data.homepageData.pageData;
-	console.log(homepageData);
 	const metaData = homepageData.metaInformation;
 	const textWithImage = data.homepageData.pageData.textWithImage;
 	const events = data.homepageData.eventsData;
